@@ -1,5 +1,6 @@
 import { ByteSpaceHero } from "@/components/bytespace-hero";
 import { BrandLogos } from "@/components/brand-logos";
+import { DiversePathsSection } from "@/components/diverse-paths-section";
 import { CoursesSection } from "@/components/courses-section";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <ByteSpaceHero />
       <BrandLogos />
       <CoursesSection />
+      <DiversePathsSection />
     </main>
   );
 }

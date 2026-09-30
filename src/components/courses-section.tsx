@@ -4,117 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
-interface Course {
-  id: string;
-  title: string;
-  instructor: string;
-  rating: number;
-  lessons: number;
-  duration: string;
-  comments: number;
-  level: string;
-  price: number;
-  image: string;
-}
-
-const CATEGORIES = [
-  // Row 1
-  "Featured",
-  "Music",
-  "Drawing & Painting",
-  "Marketing",
-  "Animation",
-  "Social Media",
-  "UI/UX Design",
-  "Creative Marketing",
-  // Row 2
-  "Digital Illustration",
-  "Film & Video",
-  "Crafts",
-  "Freelance & Entrepreneurship",
-  "Graphic Design",
-  "Photography",
-  // Row 3
-  "Productivity",
-  "Web Development",
-  "Data Science",
-  "Cooking",
-];
-
-const COURSES: Course[] = [
-  {
-    id: "1",
-    title: "Learn Figma from Basic",
-    instructor: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image: "/images/courses/course1.png",
-  },
-  {
-    id: "2",
-    title: "Build Digital Asset",
-    instructor: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image: "/images/courses/course2.png",
-  },
-  {
-    id: "3",
-    title: "the Power of Big Data",
-    instructor: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image: "/images/courses/course3.png",
-  },
-  {
-    id: "4",
-    title: "Balancing Productivity an...",
-    instructor: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image: "/images/courses/course4.png",
-  },
-  {
-    id: "5",
-    title: "Mastering Money Manage...",
-    instructor: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image: "/images/courses/course5.png",
-  },
-  {
-    id: "6",
-    title: "From Idea to Startup Succ...",
-    instructor: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image: "/images/courses/course6.png",
-  },
-];
+import { COURSE_CATEGORIES, COURSES_DATA } from "@/data/mock-data";
 
 export function CoursesSection() {
   const [activeCategory, setActiveCategory] = useState("Featured");
@@ -135,7 +25,7 @@ export function CoursesSection() {
 
         {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 max-w-6xl mb-14">
-          {CATEGORIES.map((cat) => {
+          {COURSE_CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat;
             return (
               <button
@@ -161,7 +51,7 @@ export function CoursesSection() {
 
         {/* Course Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
-          {COURSES.map((course) => (
+          {COURSES_DATA.map((course) => (
             <div
               key={course.id}
               className="bg-white border border-slate-200/90 rounded-[32px] p-5 flex flex-col shadow-sm hover:shadow-xl transition-all duration-300 group"
