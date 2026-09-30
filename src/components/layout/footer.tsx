@@ -50,6 +50,7 @@ export function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
+                suppressHydrationWarning
                 className="flex-1 bg-white border border-slate-200/90 rounded-full px-5 py-3 text-sm text-[#0F172A] placeholder:text-slate-400 outline-none focus:border-[#0047FF] transition-all shadow-sm"
               />
               <button
