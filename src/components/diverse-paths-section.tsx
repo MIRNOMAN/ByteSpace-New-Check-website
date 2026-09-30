@@ -33,7 +33,7 @@ export function DiversePathsSection() {
                   alt={item.title}
                   width={40}
                   height={40}
-                  sizes="36px"
+                  sizes="40px"
                   className="object-contain"
                 />
               </div>

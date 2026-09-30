@@ -17,6 +17,11 @@ export interface Course {
   image: string;
 }
 
+export interface MetricStat {
+  value: string;
+  label: string;
+}
+
 export const DIVERSE_PATHS_DATA: DiversePath[] = [
   {
     id: "1",
@@ -148,3 +153,40 @@ export const COURSES_DATA: Course[] = [
     image: "/images/courses/course6.png",
   },
 ];
+
+export const PROFESSIONAL_GROWTH_DATA = {
+  title: "Your Path to Professional Growth Starts Here!",
+  description:
+    "Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new career path entirely, we have the resources you need.",
+  stats: [
+    { value: "12K", label: "Students" },
+    { value: "70+", label: "Courses" },
+    { value: "16", label: "Creators" },
+  ] as MetricStat[],
+  progressValue: "55%",
+};
+
+export const CREATOR_SECTION_DATA = {
+  title: "Create & Manage Courses Easily.",
+  description:
+    "ByteSpace supports individuals or entities in the creation, publication, and administration of educational courses.",
+  features: [
+    "Share Your Expertise",
+    "Monetize Your Passion",
+    "Flexibility and Autonomy",
+    "Build a Community",
+  ],
+  revenueStats: {
+    totalRevenue: "$120.29",
+    period: "July 1-28",
+    yearToDate: "$1,200.38",
+    year: "2023",
+    ytdGrowth: "+12$",
+  },
+  studentFeedback: {
+    title: "Happy Students",
+    rating: "4.5",
+    count: "(240)",
+    avatarsBadge: "2K+",
+  },
+};

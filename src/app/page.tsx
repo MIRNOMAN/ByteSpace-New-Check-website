@@ -2,14 +2,18 @@ import { ByteSpaceHero } from "@/components/bytespace-hero";
 import { BrandLogos } from "@/components/brand-logos";
 import { DiversePathsSection } from "@/components/diverse-paths-section";
 import { CoursesSection } from "@/components/courses-section";
+import { ProfessionalGrowthSection } from "@/components/professional-growth-section";
+import { CreatorSection } from "@/components/creator-section";
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <main className="w-full overflow-x-hidden">
       <ByteSpaceHero />
       <BrandLogos />
-      <CoursesSection />
       <DiversePathsSection />
+      <CoursesSection />
+      <ProfessionalGrowthSection />
+      <CreatorSection />
     </main>
   );
 }
