@@ -6,7 +6,7 @@ import { Check, Star } from "lucide-react";
 import { CREATOR_SECTION_DATA } from "@/data/mock-data";
 
 export function CreatorSection() {
-  const { title, description, features, revenueStats, studentFeedback } = CREATOR_SECTION_DATA;
+  const { features, revenueStats, studentFeedback } = CREATOR_SECTION_DATA;
 
   return (
     <section 

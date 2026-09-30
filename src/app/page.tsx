@@ -4,6 +4,7 @@ import { DiversePathsSection } from "@/components/diverse-paths-section";
 import { CoursesSection } from "@/components/courses-section";
 import { ProfessionalGrowthSection } from "@/components/professional-growth-section";
 import { CreatorSection } from "@/components/creator-section";
+import { UnlockSection } from "@/components/unlock-section";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <CoursesSection />
       <ProfessionalGrowthSection />
       <CreatorSection />
+      <UnlockSection />
     </main>
   );
 }
