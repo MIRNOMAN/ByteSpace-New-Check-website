@@ -1,5 +1,6 @@
-import { TaskDashboard } from "@/features/tasks/components/task-dashboard";
+import { ByteSpaceHero } from "@/components/bytespace-hero";
 
 export default function Home() {
-  return <TaskDashboard />;
+  return <ByteSpaceHero />;
 }
+
