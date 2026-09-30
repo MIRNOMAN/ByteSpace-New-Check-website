@@ -61,82 +61,17 @@ export function ByteSpaceHero() {
         className="relative shrink-0 transition-transform duration-75 ease-out"
         style={{
           width: "1440px",
-          height: "1024px",
+          height: "960px",
           transform: `scale(${scale})`,
           transformOrigin: "top center",
-          marginBottom: scale < 1 ? `-${1024 * (1 - scale)}px` : "0px",
+          marginBottom: scale < 1 ? `-${960 * (1 - scale)}px` : "0px",
         }}
       >
      
-        {/* TOP NAVBAR*/}
-        
-        <header className="absolute top-0 left-0 w-full h-[88px] px-20 flex items-center justify-between z-40">
-          {/* Header_Logo.png (w: 155px, h: 34px) */}
-          <Link href="/" className="flex items-center group transition-transform hover:scale-105">
-            <div className="relative w-[155px] h-[34px]">
-              <Image
-                src="/images/banner/header-logo.png"
-                alt="ByteSpace Logo"
-                width={513}
-                height={111}
-                className="w-full h-full object-contain"
-                priority
-              />
-            </div>
-          </Link>
+        {/* HEADINGS & SEARCH BAR */}
 
-          {/* Center Links */}
-          <nav className="flex items-center gap-10 text-[15px] font-medium text-white/90">
-            <Link
-              href="/"
-              className="hover:text-white transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white"
-            >
-              Home
-            </Link>
-            <Link
-              href="#courses"
-              className="hover:text-white text-white/80 transition-colors py-1"
-            >
-              Courses
-            </Link>
-            <Link
-              href="#creators"
-              className="hover:text-white text-white/80 transition-colors py-1"
-            >
-              Creators
-            </Link>
-          </nav>
-
-          {/* Right Actions */}
-          <div className="flex items-center gap-7 text-[15px] font-medium">
-            <button
-              onClick={() => toast.info("Sign In", { description: "Authentication modal opened." })}
-              className="text-white/90 hover:text-white transition-colors cursor-pointer"
-            >
-              Sign In
-            </button>
-            <button
-              onClick={() => toast.success("Join Us", { description: "Welcome to ByteSpace community!" })}
-              className="text-white hover:text-white transition-colors cursor-pointer"
-            >
-              Join Us
-            </button>
-            <button
-              onClick={() => toast.info("Cart", { description: "Your course cart is empty." })}
-              className="text-white/90 hover:text-white transition-colors p-1 relative cursor-pointer"
-              aria-label="Shopping Bag"
-            >
-              <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
-            </button>
-          </div>
-        </header>
-
-      
-        {/* HEADINGS & SEARCH BAR }
-       
-
-        {/* Main Title: Exact Figma top: 175px */}
-        <div className="absolute top-[175px] left-1/2 -translate-x-1/2 w-[850px] text-center z-30 pointer-events-none">
+        {/* Main Title: top: 120px */}
+        <div className="absolute top-[120px] left-1/2 -translate-x-1/2 w-[850px] text-center z-30 pointer-events-none">
           <h1 className="text-[64px] font-extrabold text-white tracking-tight leading-[1.12]">
             Get Access to Hundreds
             <br />
@@ -144,15 +79,15 @@ export function ByteSpaceHero() {
           </h1>
         </div>
 
-        {/* Subtitle: Exact Figma top: 345px */}
-        <div className="absolute top-[345px] left-1/2 -translate-x-1/2 w-auto text-center z-30 pointer-events-none">
+        {/* Subtitle: top: 290px */}
+        <div className="absolute top-[290px] left-1/2 -translate-x-1/2 w-auto text-center z-30 pointer-events-none">
           <p className="text-white/85 text-[14px] font-normal leading-relaxed">
             Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
           </p>
         </div>
 
-        {/* Search Bar: Exact Figma top: 460px */}
-        <div className="absolute top-[460px] left-1/2 -translate-x-1/2 w-[580px] z-30">
+        {/* Search Bar: top: 405px */}
+        <div className="absolute top-[405px] left-1/2 -translate-x-1/2 w-[580px] z-30">
           <form
             onSubmit={handleSearch}
             className="w-full bg-white rounded-full p-1.5 pl-6 flex items-center shadow-[0_15px_35px_rgba(0,0,0,0.22)] border border-white/20 transition-all focus-within:ring-4 focus-within:ring-white/30"
@@ -175,15 +110,14 @@ export function ByteSpaceHero() {
         </div>
 
   
-        {/* 3D FLOATING ICONS }
-       
+        {/* 3D FLOATING ICONS */}
 
-        {/* 1. Top-Left: Frame (1).png (Lime Squiggle) -> X: -118, Y: 221, W: 385, H: 385 */}
+        {/* 1. Top-Left: Frame (1).png (Lime Squiggle attached to left edge) -> X: 0, Y: 150 */}
         <div
           className="absolute z-20 pointer-events-none"
           style={{
-            left: "-100px",
-            top: "221px",
+            left: "0px",
+            top: "150px",
             width: "385px",
             height: "385px",
           }}
@@ -198,12 +132,12 @@ export function ByteSpaceHero() {
           />
         </div>
 
-        {/* 2. Middle-Left: Frame.png (White Wave) -> X: 183, Y: 477, W: 175, H: 175, 180° */}
+        {/* 2. Middle-Left: Frame.png (White Wave) */}
         <div
           className="absolute z-20 pointer-events-none"
           style={{
             left: "183px",
-            top: "477px",
+            top: "410px",
             width: "175px",
             height: "175px",
             transform: "rotate(180deg)",
@@ -219,12 +153,12 @@ export function ByteSpaceHero() {
           />
         </div>
 
-        {/* 3. Bottom-Left: Mask Group.png (White Donut) -> X: 18, Y: 682, W: 342, H: 342 */}
+        {/* 3. Bottom-Left: Mask Group.png (White Donut) */}
         <div
           className="absolute z-20 pointer-events-none"
           style={{
             left: "15px",
-            top: "682px",
+            top: "615px",
             width: "342px",
             height: "342px",
           }}
@@ -239,12 +173,12 @@ export function ByteSpaceHero() {
           />
         </div>
 
-        {/* 4. Top-Right: Mask Group (1).png (Lime Cylinder) -> X: 1205, Y: 195, W: 250, H: 350 */}
+        {/* 4. Top-Right: Mask Group (1).png (Lime Cylinder attached to right edge) -> X: 1190, Y: 130 */}
         <div
           className="absolute z-20 pointer-events-none"
           style={{
-            left: "1262px",
-            top: "195px",
+            left: "1190px",
+            top: "130px",
             width: "250px",
             height: "350px",
           }}
