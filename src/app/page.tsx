@@ -6,6 +6,7 @@ import { ProfessionalGrowthSection } from "@/components/professional-growth-sect
 import { CreatorSection } from "@/components/creator-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { UnlockSection } from "@/components/unlock-section";
+import { Footer } from "@/components/layout/footer";
 
 export default function Home() {
   return (
@@ -16,8 +17,9 @@ export default function Home() {
       <CoursesSection />
       <ProfessionalGrowthSection />
       <CreatorSection />
+      <TestimonialsSection />
       <UnlockSection />
-       <TestimonialsSection />
+      <Footer />
     </main>
   );
 }

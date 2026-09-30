@@ -58,7 +58,7 @@ export function TestimonialsSection() {
               </p>
 
               {/* Quote Text */}
-              <p className="text-[#475569] text-sm leading-[1.65] font-normal">
+              <p className="text-[#475569] text-sm lg:text-[16px] leading-[30px] font-normal">
                 {item.quote}
               </p>
             </div>
