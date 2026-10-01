@@ -29,7 +29,7 @@ export function CoursesSearchHero({
   liveSearchResults,
 }: CoursesSearchHeroProps) {
   return (
-    <section className="relative w-full bg-[#0047FF] text-white py-16 sm:py-20 px-6 sm:px-12 md:px-16 overflow-hidden selection:bg-[#CBFC01] selection:text-black">
+    <section className="relative z-30 w-full bg-[#0047FF] text-white py-16 sm:py-20 px-6 sm:px-12 md:px-16 selection:bg-[#CBFC01] selection:text-black">
       {/* Background Blueprint Grid (80px x 80px) */}
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-30"
@@ -82,7 +82,7 @@ export function CoursesSearchHero({
 
           {/* Interactive Live Search Dropdown Popup Results */}
           {searchQuery.trim().length > 0 && (
-            <div className="absolute top-full left-0 right-14 sm:right-32 mt-2 bg-white rounded-2xl p-3 shadow-2xl border border-slate-200 z-50 text-left max-h-80 overflow-y-auto">
+            <div className="absolute top-full left-0 right-0 sm:right-32 mt-2 bg-white rounded-2xl p-3 shadow-2xl border border-slate-200 z-50 text-left max-h-80 overflow-y-auto">
               <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1 mb-1">
                 Found {liveSearchResults.length} result{liveSearchResults.length !== 1 ? "s" : ""}
               </div>

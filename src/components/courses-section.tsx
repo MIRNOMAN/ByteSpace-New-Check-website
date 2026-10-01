@@ -62,6 +62,7 @@ export function CoursesSection() {
                   src={course.image}
                   alt={course.title}
                   fill
+                  priority={course.id === "1" || course.id === "2" || course.id === "3"}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />

@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Search, ShoppingBag, Star, LayoutGrid, X } from "lucide-react";
+import { Search,  Star, LayoutGrid, X } from "lucide-react";
 import { TaskDashboard } from "@/features/tasks/components/task-dashboard";
 import { useAppDispatch } from "@/store/hooks";
 import { setFilters } from "@/store/slices/task-slice";

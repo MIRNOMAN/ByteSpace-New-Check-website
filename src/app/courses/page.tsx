@@ -6,7 +6,7 @@ import { CoursesSearchContent } from "@/components/courses/courses-search-conten
 import { SEARCH_PAGE_COURSES } from "@/data/mock-data";
 import { toast } from "sonner";
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 18;
 
 export default function CoursesPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -99,7 +99,22 @@ export default function CoursesPage() {
       />
 
       {/* Filter, Products & Pagination Content Section */}
-
+      <CoursesSearchContent
+        selectedCategoryPill={selectedCategoryPill}
+        onCategoryPillSelect={handleCategoryPillSelect}
+        selectedFilter={selectedFilter}
+        selectedLevel={selectedLevel}
+        selectedCategory={selectedCategory}
+        sortOption={sortOption}
+        onFilterSelect={handleFilterSelect}
+        onLevelSelect={handleLevelSelect}
+        onCategorySelect={handleCategorySelect}
+        onSortSelect={handleSortSelect}
+        displayedCourses={displayedCourses}
+        currentPage={currentPage}
+        totalPages={totalPages > 5 ? 5 : totalPages}
+        onPageChange={setCurrentPage}
+      />
     </main>
   );
 }
