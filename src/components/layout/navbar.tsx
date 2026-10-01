@@ -41,7 +41,7 @@ export function Navbar() {
             Home
           </Link>
           <Link
-            href="#courses"
+            href="/courses"
             className={`py-1 transition-colors relative ${
               pathname.includes("courses")
                 ? "text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white"
