@@ -13,7 +13,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0047FF] border-b border-white/10 backdrop-blur-md select-none">
-      <div className="max-w-7xl mx-auto h-[76px] px-6 sm:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto h-[76px]  flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center group transition-transform hover:scale-105">
           <div className="relative w-[150px] h-[34px]">
@@ -29,22 +29,34 @@ export function Navbar() {
         </Link>
 
         {/* Center Links */}
-        <nav className="hidden md:flex items-center gap-10 text-[15px] font-medium text-white/90">
+        <nav className="hidden md:flex items-center gap-10 text-[15px] font-medium">
           <Link
             href="/"
-            className="hover:text-white transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white"
+            className={`py-1 transition-colors relative ${
+              pathname === "/"
+                ? "text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white"
+                : "text-white/80 hover:text-white"
+            }`}
           >
             Home
           </Link>
           <Link
             href="#courses"
-            className="hover:text-white text-white/80 transition-colors py-1"
+            className={`py-1 transition-colors relative ${
+              pathname.includes("courses")
+                ? "text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white"
+                : "text-white/80 hover:text-white"
+            }`}
           >
             Courses
           </Link>
           <Link
-            href="#creators"
-            className="hover:text-white text-white/80 transition-colors py-1"
+            href="/creators"
+            className={`py-1 transition-colors relative ${
+              pathname.startsWith("/creators")
+                ? "text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white"
+                : "text-white/80 hover:text-white"
+            }`}
           >
             Creators
           </Link>

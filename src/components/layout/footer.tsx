@@ -38,6 +38,7 @@ export function Footer() {
                 alt="ByteSpace Logo"
                 width={150}
                 height={36}
+                style={{ width: "auto" }}
                 className="h-8 sm:h-9 w-auto object-contain"
               />
             </Link>

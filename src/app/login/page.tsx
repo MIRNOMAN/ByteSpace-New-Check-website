@@ -267,7 +267,7 @@ export default function LoginPage() {
               <span className="text-[#0047FF] font-medium text-xs sm:text-sm mb-1 block">
                 Sign In 
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15] mb-7">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] tracking-tight leading-[1.15] mb-7">
                 Welcome Back
               </h2>
 
