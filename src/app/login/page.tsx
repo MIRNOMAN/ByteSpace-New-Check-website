@@ -55,7 +55,7 @@ export default function LoginPage() {
         <div className="lg:col-span-6 flex flex-col justify-center text-white">
           
           {/* Text Block */}
-          <h1 className="text-2xl  font-extrabold tracking-tight leading-[1.15] mb-3">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl  font-extrabold tracking-tight leading-[1.15] mb-3">
             Sign in with ease
         
           </h1>
