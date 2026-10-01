@@ -17,7 +17,7 @@ export function CourseDetailsTabs({ course }: CourseDetailsTabsProps) {
 
   const tabs: { id: CourseTabType; label: string }[] = [
     { id: "about", label: "About" },
-    { id: "lessons", label: "Lessons" },
+    { id: "lessons", label: "Lesson" },
     { id: "reviews", label: "Reviews" },
   ];
 
