@@ -5,8 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+  const pathname = usePathname();
+  if (pathname === "/register") return null;
+
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0047FF] border-b border-white/10 backdrop-blur-md select-none">
       <div className="max-w-7xl mx-auto h-[76px] px-6 sm:px-12 flex items-center justify-between">

@@ -4,9 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { toast } from "sonner";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
   const [email, setEmail] = useState("");
+
+  if (pathname === "/register") return null;
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();

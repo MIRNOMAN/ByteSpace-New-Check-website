@@ -36,21 +36,21 @@ export default function RegisterPage() {
       />
 
       {/* Top Left Logo Icon */}
-      <div className="absolute top-6 left-6 sm:top-10 sm:left-10 z-30">
-        <Link href="/">
+      <div className="absolute top-6 sm:top-8 left-0 right-0 z-30 max-w-7xl mx-auto  pointer-events-none">
+        <Link href="/" className="pointer-events-auto inline-block">
           <Image
-            src="/images/banner/logo.png"
-            alt="ByteSpace"
-            width={160}
-            height={40}
+            src="/images/banner/Groupsvg.png"
+            alt="ByteSpace Logo"
+            width={105}
+            height={111}
             priority
-            className="h-8 sm:h-9 w-auto object-contain"
+            className="h-9 sm:h-11 w-auto object-contain transition-transform hover:scale-105"
           />
         </Link>
       </div>
 
       {/* Main Grid Container (2 Columns) */}
-      <div className="relative z-20 max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center my-auto pt-16 sm:pt-0">
+      <div className="relative z-20 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center my-auto pt-16 sm:pt-0">
         
         {/* Left Column: Text & 3D Visual Stack (Cols 1-6) */}
         <div className="lg:col-span-6 flex flex-col justify-center text-white">
@@ -64,36 +64,36 @@ export default function RegisterPage() {
           </p>
 
           {/* Visual Composite Cards & 3D Icons Container */}
-          <div className="relative w-full max-w-[480px] h-[360px] sm:h-[400px]">
+          <div className="relative w-full max-w-[520px] h-[400px] sm:h-[440px]">
             
             {/* 3D Shape 1: Top-Left Lime Torus Ring (Cone (5).png) */}
-            <div className="absolute left-6 sm:left-8 top-1 w-[80px] sm:w-[105px] h-[80px] sm:h-[105px] z-30 pointer-events-none drop-shadow-xl">
+            <div className="absolute left-[30px] sm:left-[40px] -top-4 w-[90px] sm:w-[150px] h-[90px] sm:h-[150px] z-25 pointer-events-none drop-shadow-2xl">
               <Image
                 src="/images/signup/Cone (5).png"
                 alt="Lime Ring"
                 fill
                 priority
-                sizes="105px"
+                sizes="110px"
                 className="object-contain"
               />
             </div>
 
             {/* Back Card 1: Build Digital Asset (course2.png) */}
-            <div className="absolute left-0 top-10 w-[230px] sm:w-[260px] bg-white rounded-[24px] p-4 shadow-xl border border-slate-100 opacity-90 z-10 pointer-events-none">
-              <div className="relative w-full h-[105px] rounded-[16px] overflow-hidden mb-3 bg-slate-100">
+            <div className="absolute left-0 top-[50px] sm:top-[60px] w-[240px] sm:w-[270px] bg-white rounded-[26px] p-4 sm:p-4.5 shadow-xl border border-slate-100 z-10 pointer-events-none">
+              <div className="relative w-full h-[110px] sm:h-[155px] rounded-[18px] overflow-hidden mb-3 bg-slate-100">
                 <Image
                   src="/images/courses/course2.png"
                   alt="Build Digital Asset"
                   fill
                   priority
-                  sizes="260px"
+                  sizes="270px"
                   className="object-cover"
                 />
-                <span className="absolute bottom-2 left-2 bg-white/80 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] text-slate-800 font-medium">
+                <span className="absolute bottom-2 left-2 bg-white/80 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] text-slate-800 font-semibold">
                   17 Lessons
                 </span>
               </div>
-              <h4 className="font-bold text-sm text-[#0F172A] truncate mb-0.5">
+              <h4 className="font-extrabold text-sm text-[#0F172A] truncate mb-0.5">
                 Build Digital Asset
               </h4>
               <p className="text-[11px] text-slate-500 mb-2">
@@ -104,42 +104,59 @@ export default function RegisterPage() {
                   <BarChart2 className="w-3 h-3 text-slate-500" />
                   Beginner
                 </span>
-                <span className="text-sm font-bold text-[#0047FF]">$25<span className="text-[10px] font-normal text-slate-400">/lifetime</span></span>
+                {/* Avatars Stack */}
+                <div className="flex items-center -space-x-1.5">
+                  <div className="w-5 h-5 rounded-full border border-white overflow-hidden relative shrink-0">
+                    <Image src="/images/banner/avatar1.png" alt="User" fill sizes="20px" className="object-cover" />
+                  </div>
+                  <div className="w-5 h-5 rounded-full border border-white overflow-hidden relative shrink-0">
+                    <Image src="/images/banner/avatar2.png" alt="User" fill sizes="20px" className="object-cover" />
+                  </div>
+                  <div className="w-5 h-5 rounded-full border border-white overflow-hidden relative shrink-0">
+                    <Image src="/images/banner/avatar3.png" alt="User" fill sizes="20px" className="object-cover" />
+                  </div>
+                  <div className="w-5 h-5 rounded-full border border-white bg-black text-white flex items-center justify-center text-[8px] font-bold shrink-0">
+                    26+
+                  </div>
+                </div>
+              </div>
+              <div className="mt-2 text-xs font-bold text-[#0047FF]">
+                $25<span className="text-[10px] font-normal text-slate-400">/lifetime</span>
               </div>
             </div>
 
             {/* Front Card 2: the Power of Big Data (course3.png) */}
-            <div className="absolute left-[80px] sm:left-[110px] top-0 w-[260px] sm:w-[290px] bg-white rounded-[26px] p-4 sm:p-4.5 shadow-2xl border border-slate-100 z-20">
-              <div className="relative w-full h-[125px] rounded-[18px] overflow-hidden mb-3 bg-slate-100">
+            <div className="absolute left-[90px] sm:left-[120px] top-0 w-[270px] sm:w-[310px] bg-white rounded-[28px] p-4.5 sm:p-5 shadow-2xl border border-slate-100 z-20">
+              <div className="relative w-full h-[125px] sm:h-[145px] rounded-[20px] overflow-hidden mb-3 bg-slate-100">
                 <Image
                   src="/images/courses/course3.png"
                   alt="the Power of Big Data"
                   fill
                   priority
-                  sizes="290px"
+                  sizes="310px"
                   className="object-cover"
                 />
                 {/* Pill Badges */}
                 <div className="absolute bottom-2 left-2 right-2 flex items-center gap-1.5 overflow-hidden">
-                  <span className="bg-white/80 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] text-slate-800 font-semibold shrink-0">
+                  <span className="bg-white/85 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] text-slate-800 font-semibold shrink-0">
                     17 Lessons
                   </span>
-                  <span className="bg-white/80 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] text-slate-800 font-semibold shrink-0">
+                  <span className="bg-white/85 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] text-slate-800 font-semibold shrink-0">
                     2 hours 16 mins
                   </span>
-                  <span className="bg-white/80 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] text-slate-800 font-semibold truncate">
+                  <span className="bg-white/85 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] text-slate-800 font-semibold truncate">
                     59 Comments
                   </span>
                 </div>
               </div>
 
               <div className="flex items-center justify-between gap-1 mb-0.5">
-                <h4 className="font-extrabold text-sm text-[#0F172A] truncate">
+                <h4 className="font-extrabold text-sm sm:text-base text-[#0F172A] truncate">
                   the Power of Big Data
                 </h4>
                 <div className="flex items-center gap-0.5 text-slate-600 text-xs font-semibold shrink-0">
                   <span>4.5</span>
-                  <Star className="w-3 h-3 fill-[#EAB308] text-[#EAB308]" />
+                  <Star className="w-3.5 h-3.5 fill-[#EAB308] text-[#EAB308]" />
                 </div>
               </div>
 
@@ -176,10 +193,22 @@ export default function RegisterPage() {
             </div>
 
             {/* 3D Shape 2: Bottom-Left Yellow Pyramid (Cone (6).png) */}
-            <div className="absolute left-0 bottom-0 w-[100px] sm:w-[130px] h-[100px] sm:h-[130px] z-30 pointer-events-none drop-shadow-2xl">
+            <div className="absolute left-[-15px] sm:left-[-20px] bottom-[-10px] sm:bottom-[-25px] w-[150px] sm:w-[160px] h-[120px] sm:h-[160px] z-35 pointer-events-none drop-shadow-2xl">
               <Image
                 src="/images/signup/Cone (6).png"
                 alt="Yellow Pyramid"
+                fill
+                priority
+                sizes="145px"
+                className="object-contain"
+              />
+            </div>
+
+            {/* 3D Shape 3: Bottom-Right White Wave (Frame (14).png) */}
+            <div className="absolute right-[5px] sm:right-[100px] bottom-[80px] sm:bottom-[45px] w-[110px] sm:w-[140px] h-[110px] sm:h-[140px] z-40 pointer-events-none drop-shadow-2xl">
+              <Image
+                src="/images/signup/Frame (14).png"
+                alt="White Wave"
                 fill
                 priority
                 sizes="130px"
@@ -187,30 +216,18 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* 3D Shape 3: Bottom-Right White Wave (Frame (14).png) */}
-            <div className="absolute right-0 sm:right-2 bottom-[90px] sm:bottom-[105px] w-[90px] sm:w-[120px] h-[90px] sm:h-[120px] z-25 pointer-events-none drop-shadow-xl">
-              <Image
-                src="/images/signup/Frame (14).png"
-                alt="White Wave"
-                fill
-                priority
-                sizes="120px"
-                className="object-contain"
-              />
-            </div>
-
-            {/* Bottom Card 3: Lime Happy Students Badge (#D2FF00) */}
-            <div className="absolute right-2 sm:right-4 bottom-2 bg-[#D2FF00] text-black rounded-[22px] p-3.5 sm:p-4 shadow-xl z-30 w-[190px] sm:w-[210px]">
+            {/* Bottom Card 3: Lime Happy Students Badge (#CBFC01) */}
+            <div className="absolute right-0 sm:right-30 bottom-0 bg-[#CBFC01] text-black rounded-[15px] p-4 sm:p-4.5 shadow-2xl z-30 w-[210px] sm:w-[235px]">
               <h5 className="text-xs font-bold text-[#0F172A] mb-0.5">
                 Happy Students
               </h5>
-              <div className="flex items-center gap-1 text-[11px] font-semibold text-slate-800 mb-2">
+              <div className="flex items-center gap-1 text-[11px] font-semibold text-slate-800 mb-2.5">
                 <span>4.5</span>
                 <span className="text-slate-600 font-normal">(240)</span>
                 <Star className="w-3 h-3 fill-[#0047FF] text-[#0047FF] ml-0.5" />
               </div>
 
-              {/* Avatars Stack */}
+              {/* Avatars Stack (6 avatars + 2K+ badge) */}
               <div className="flex items-center -space-x-1.5">
                 <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden relative shrink-0">
                   <Image src="/images/banner/avatar1.png" alt="User" fill sizes="24px" className="object-cover" />
@@ -224,7 +241,13 @@ export default function RegisterPage() {
                 <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden relative shrink-0">
                   <Image src="/images/banner/avatar4.png" alt="User" fill sizes="24px" className="object-cover" />
                 </div>
-                <div className="w-6 h-6 rounded-full border-2 border-white bg-black text-white flex items-center justify-center text-[9px] font-bold shrink-0">
+                <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden relative shrink-0">
+                  <Image src="/images/men/Ellipse.png" alt="User" fill sizes="24px" className="object-cover" />
+                </div>
+                <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden relative shrink-0">
+                  <Image src="/images/men/Ellipse (1).png" alt="User" fill sizes="24px" className="object-cover" />
+                </div>
+                <div className="w-6 h-6 rounded-full border-2 border-white bg-black text-white flex items-center justify-center text-[9px] font-extrabold shrink-0">
                   2K+
                 </div>
               </div>
@@ -314,7 +337,7 @@ export default function RegisterPage() {
             <div className="mt-8 text-center pt-2 border-t border-slate-100">
               <p className="text-xs text-slate-500 font-normal">
                 Already have an account?{" "}
-                <Link href="#" className="text-[#0047FF] font-semibold hover:underline">
+                <Link href="/login" className="text-[#0047FF] font-semibold hover:underline">
                   Login
                 </Link>
               </p>

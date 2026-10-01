@@ -56,6 +56,44 @@ export function ByteSpaceHero() {
         }}
       />
 
+      {/* Top-Left Image: Attached directly to left screen edge with zero gap */}
+      <div
+        className="absolute left-0 z-20 pointer-events-none transition-all duration-75 ease-out"
+        style={{
+          top: `${150 * scale}px`,
+          width: `${266 * scale}px`,
+          height: `${385 * scale}px`,
+        }}
+      >
+        <Image
+          src="/images/banner/frame-1.png"
+          alt="3D Lime Squiggle"
+          width={534}
+          height={774}
+          className="w-full h-full object-contain object-left drop-shadow-2xl"
+          priority
+        />
+      </div>
+
+      {/* Top-Right Image: Attached directly to right screen edge with zero gap */}
+      <div
+        className="absolute right-0 z-20 pointer-events-none transition-all duration-75 ease-out"
+        style={{
+          top: `${130 * scale}px`,
+          width: `${201 * scale}px`,
+          height: `${350 * scale}px`,
+        }}
+      >
+        <Image
+          src="/images/banner/mask-group-1.png"
+          alt="3D Lime Cylinder"
+          width={426}
+          height={744}
+          className="w-full h-full object-contain object-right drop-shadow-2xl"
+          priority
+        />
+      </div>
+
       {/* 2. Scaled Exact 1440 x 1024 Figma Canvas Frame */}
       <div
         className="relative shrink-0 transition-transform duration-75 ease-out"
@@ -112,26 +150,6 @@ export function ByteSpaceHero() {
   
         {/* 3D FLOATING ICONS */}
 
-        {/* 1. Top-Left: Frame (1).png (Lime Squiggle attached to left edge) -> X: 0, Y: 150 */}
-        <div
-          className="absolute z-20 pointer-events-none"
-          style={{
-            left: "0px",
-            top: "150px",
-            width: "385px",
-            height: "385px",
-          }}
-        >
-          <Image
-            src="/images/banner/frame-1.png"
-            alt="3D Lime Squiggle"
-            width={534}
-            height={774}
-            className="w-full h-full object-contain drop-shadow-2xl"
-            priority
-          />
-        </div>
-
         {/* 2. Middle-Left: Frame.png (White Wave) */}
         <div
           className="absolute z-20 pointer-events-none"
@@ -168,26 +186,6 @@ export function ByteSpaceHero() {
             alt="3D White Donut"
             width={688}
             height={686}
-            className="w-full h-full object-contain drop-shadow-2xl"
-            priority
-          />
-        </div>
-
-        {/* 4. Top-Right: Mask Group (1).png (Lime Cylinder attached to right edge) -> X: 1190, Y: 130 */}
-        <div
-          className="absolute z-20 pointer-events-none"
-          style={{
-            left: "1190px",
-            top: "130px",
-            width: "250px",
-            height: "350px",
-          }}
-        >
-          <Image
-            src="/images/banner/mask-group-1.png"
-            alt="3D Lime Cylinder"
-            width={426}
-            height={744}
             className="w-full h-full object-contain drop-shadow-2xl"
             priority
           />
