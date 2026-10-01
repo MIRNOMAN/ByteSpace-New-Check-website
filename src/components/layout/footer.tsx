@@ -10,7 +10,7 @@ export function Footer() {
   const pathname = usePathname();
   const [email, setEmail] = useState("");
 
-  if (pathname === "/register") return null;
+  if (pathname === "/register" || pathname === "/login") return null;
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();

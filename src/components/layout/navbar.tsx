@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
-  if (pathname === "/register") return null;
+  if (pathname === "/register" || pathname === "/login") return null;
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0047FF] border-b border-white/10 backdrop-blur-md select-none">
