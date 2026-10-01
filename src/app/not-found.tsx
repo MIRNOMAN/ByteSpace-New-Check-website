@@ -2,8 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { ShoppingBag } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -21,45 +19,7 @@ export default function NotFound() {
         }}
       />
 
-      {/* Header / Navbar */}
-      <header className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-12 py-6 sm:py-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link href="/" className="inline-block">
-          <Image
-            src="/images/banner/logo.png"
-            alt="ByteSpace"
-            width={150}
-            height={36}
-            className="h-8 sm:h-9 w-auto object-contain brightness-0 invert"
-          />
-        </Link>
 
-        {/* Center Menu Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-normal text-white/90">
-          <Link href="/" className="hover:text-white transition-colors">
-            Home
-          </Link>
-          <Link href="#" className="hover:text-white transition-colors">
-            Courses
-          </Link>
-          <Link href="#" className="hover:text-white transition-colors">
-            Creators
-          </Link>
-        </nav>
-
-        {/* Right Action Menu */}
-        <div className="flex items-center gap-6 text-sm font-normal text-white/90">
-          <Link href="#" className="hover:text-white transition-colors">
-            Sign In
-          </Link>
-          <Link href="#" className="hover:text-white transition-colors">
-            Join Us
-          </Link>
-          <Link href="#" className="hover:opacity-80 transition-opacity">
-            <ShoppingBag className="w-5 h-5 text-white" />
-          </Link>
-        </div>
-      </header>
 
       {/* Main 404 Hero Content */}
       <main className="relative z-20 max-w-5xl mx-auto px-6 flex-1 flex flex-col items-center justify-center text-center my-auto py-12">

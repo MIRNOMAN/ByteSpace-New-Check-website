@@ -52,12 +52,12 @@ export function Navbar() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-7 text-[15px] font-medium">
-          <button
-            onClick={() => toast.info("Sign In", { description: "Authentication modal opened." })}
+          <Link
+           href="/login"
             className="text-white/90 hover:text-white transition-colors cursor-pointer"
           >
             Sign In
-          </button>
+          </Link>
           <button
             onClick={() => toast.success("Join Us", { description: "Welcome to ByteSpace community!" })}
             className="text-white hover:text-white transition-colors cursor-pointer"
