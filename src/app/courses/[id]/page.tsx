@@ -32,7 +32,7 @@ export default async function CourseDetailsPage({ params }: CourseDetailsPagePro
   return (
     <main className="relative w-full min-h-screen bg-white overflow-hidden">
       {/* Top Blue Blueprint Header Background */}
-      <div className="absolute top-0 left-0 right-0 h-[640px] sm:h-[600px] md:h-[720px] bg-[#0047FF] z-0 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-[640px] sm:h-[600px] md:h-[740px] bg-[#0047FF] z-0 overflow-hidden">
         {/* Background Blueprint Grid (80px x 80px) */}
         <div
           className="pointer-events-none absolute inset-0 z-0 opacity-20"
@@ -51,7 +51,7 @@ export default async function CourseDetailsPage({ params }: CourseDetailsPagePro
         {/* Top Header Row with Title & Share Button */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
           <div className="max-w-3xl text-white">
-            <h1 className="text-3xl sm:text-4xl md:text-[32px] font-extrabold tracking-tight text-white leading-[1.18] mb-2.5">
+            <h1 className="text-3xl sm:text-4xl md:text-[25px] font-extrabold tracking-tight text-white leading-[1.18] mb-2.5">
               {course.title}: A Comprehensive Guide
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-blue-100 font-medium mb-3">
@@ -95,7 +95,7 @@ export default async function CourseDetailsPage({ params }: CourseDetailsPagePro
           {/* Left Column (Video Player Box + Dynamic Tabs) */}
           <div className="lg:col-span-8 space-y-10">
             {/* Video Player Box */}
-            <div className="relative w-full h-[280px] sm:h-[380px] md:h-[420px] rounded-[24px] overflow-hidden shadow-2xl ">
+            <div className="relative w-full h-[280px] sm:h-[380px] md:h-[479px] rounded-[24px] overflow-hidden shadow-2xl ">
               <Image
                 src="/images/courseDetails/Frame (16).png"
                 alt={course.title}
