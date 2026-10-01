@@ -98,7 +98,7 @@ export function CoursesSection() {
               </p>
 
               {/* Level Badge & Overlapping Avatars Row */}
-              <div className="flex items-center justify-between gap-2 mb-6">
+              <div className="flex items-center  gap-2 mb-6">
                 {/* Level Badge */}
                 <div className="bg-[#F1F5F9] px-4 py-2 rounded-full text-sm font-semibold text-slate-700 flex items-center gap-2">
                   <svg className="w-4 h-4 fill-current text-slate-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

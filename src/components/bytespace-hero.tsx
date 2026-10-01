@@ -2,15 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Search,  Star, LayoutGrid, X } from "lucide-react";
-import { TaskDashboard } from "@/features/tasks/components/task-dashboard";
+import { Search,  Star} from "lucide-react";
+
 import { useAppDispatch } from "@/store/hooks";
 import { setFilters } from "@/store/slices/task-slice";
 import { toast } from "sonner";
 
 export function ByteSpaceHero() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [showWorkspace, setShowWorkspace] = useState(false);
+
   const [scale, setScale] = useState(1);
   const dispatch = useAppDispatch();
 
@@ -174,8 +174,8 @@ export function ByteSpaceHero() {
         <div
           className="absolute z-20 pointer-events-none"
           style={{
-            left: "15px",
-            top: "615px",
+            left: "50px",
+            top: "625px",
             width: "342px",
             height: "342px",
           }}
@@ -377,7 +377,7 @@ export function ByteSpaceHero() {
       </div>
 
       {/* Floating Toggle Button for Architecture & Redux Workspace */}
-      <div className="fixed bottom-6 right-6 z-50">
+      {/* <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setShowWorkspace(!showWorkspace)}
           className="bg-black/90 hover:bg-black text-white px-4 py-2.5 rounded-full shadow-2xl border border-white/20 flex items-center gap-2 text-xs font-semibold backdrop-blur-md cursor-pointer transition-all hover:scale-105"
@@ -394,10 +394,10 @@ export function ByteSpaceHero() {
             </>
           )}
         </button>
-      </div>
+      </div> */}
 
       {/* Slide-over / Modal for Enterprise Redux & Error Handling Workspace */}
-      {showWorkspace && (
+      {/* {showWorkspace && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md overflow-y-auto p-4 sm:p-8 animate-in fade-in duration-200">
           <div className="max-w-7xl mx-auto bg-background text-foreground rounded-3xl p-6 sm:p-10 shadow-2xl border border-border relative mt-8 mb-16">
             <div className="flex items-center justify-between pb-6 border-b border-border/80">
@@ -419,7 +419,7 @@ export function ByteSpaceHero() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
