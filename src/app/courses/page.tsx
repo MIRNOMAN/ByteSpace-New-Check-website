@@ -4,12 +4,14 @@ import React, { useState, useMemo } from "react";
 import { CoursesSearchHero } from "@/components/courses/courses-search-hero";
 import { CoursesSearchContent } from "@/components/courses/courses-search-content";
 import { SEARCH_PAGE_COURSES } from "@/data/mock-data";
-import { toast } from "sonner";
+import { CourseCardData } from "@/components/common/course-card";
+
 
 const ITEMS_PER_PAGE = 18;
 
 export default function CoursesPage() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [submittedSearchQuery, setSubmittedSearchQuery] = useState("");
   const [selectedCategoryType, setSelectedCategoryType] = useState("Courses");
   const [selectedCategoryPill, setSelectedCategoryPill] = useState("Featured");
   const [selectedFilter, setSelectedFilter] = useState("All");
@@ -18,46 +20,74 @@ export default function CoursesPage() {
   const [sortOption, setSortOption] = useState("Most relevant");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const handleSearchChange = (query: string) => {
-    setSearchQuery(query);
+  // Called when user types in the search input
+  const handleSearchInputChange = (query: string) => {
+    setSearchInput(query);
+  };
+
+  // Called when user clicks the Courses button or presses Enter
+  const handleSearchSubmit = () => {
+    setSubmittedSearchQuery(searchInput.trim());
     setCurrentPage(1);
+   
+  };
+
+  // Called when user clicks a suggested course item in the live search dropdown popup
+  const handleSelectSuggestedCourse = (course: CourseCardData) => {
+    setSearchInput(course.title);
+    setSubmittedSearchQuery(course.title);
+    setCurrentPage(1);
+   
   };
 
   const handleCategoryPillSelect = (cat: string) => {
     setSelectedCategoryPill(cat);
     setCurrentPage(1);
-    toast.success(`Category: ${cat}`);
+    
   };
 
   const handleFilterSelect = (val: string) => {
     setSelectedFilter(val);
     setCurrentPage(1);
-    toast.success(`Filter: ${val}`);
+    
   };
 
   const handleLevelSelect = (val: string) => {
     setSelectedLevel(val);
     setCurrentPage(1);
-    toast.success(`Level: ${val}`);
+    
   };
 
   const handleCategorySelect = (val: string) => {
     setSelectedCategory(val);
     setCurrentPage(1);
-    toast.success(`Category: ${val}`);
+    
   };
 
   const handleSortSelect = (val: string) => {
     setSortOption(val);
-    toast.success(`Sorted by ${val}`);
+   
   };
 
-  // Filter courses live based on searchQuery, categoryPill, level, and category
+  // Live search suggestions matches (matches searchInput for live popup)
+  const liveSearchResults = useMemo(() => {
+    if (!searchInput.trim()) return [];
+    const q = searchInput.toLowerCase().trim();
+    return SEARCH_PAGE_COURSES.filter(
+      (course) =>
+        course.title.toLowerCase().includes(q) ||
+        course.author.toLowerCase().includes(q) ||
+        course.level.toLowerCase().includes(q) ||
+        (course.category && course.category.toLowerCase().includes(q))
+    );
+  }, [searchInput]);
+
+  // Main grid courses filtering (filtered ONLY by submittedSearchQuery or filters)
   const filteredCourses = useMemo(() => {
     return SEARCH_PAGE_COURSES.filter((course) => {
-      // Search query filter (matches title or author or level)
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase().trim();
+      // Submitted search query filter
+      if (submittedSearchQuery.trim()) {
+        const q = submittedSearchQuery.toLowerCase().trim();
         const matchTitle = course.title.toLowerCase().includes(q);
         const matchAuthor = course.author.toLowerCase().includes(q);
         const matchLevel = course.level.toLowerCase().includes(q);
@@ -78,7 +108,7 @@ export default function CoursesPage() {
 
       return true;
     });
-  }, [searchQuery, selectedCategoryPill, selectedLevel, selectedCategory]);
+  }, [submittedSearchQuery, selectedCategoryPill, selectedLevel, selectedCategory]);
 
   // Paginated Courses
   const totalPages = Math.max(1, Math.ceil(filteredCourses.length / ITEMS_PER_PAGE));
@@ -91,11 +121,13 @@ export default function CoursesPage() {
     <main className="w-full min-h-screen bg-white">
       {/* Search Hero Section */}
       <CoursesSearchHero
-        searchQuery={searchQuery}
-        onSearchChange={handleSearchChange}
+        searchInput={searchInput}
+        onSearchInputChange={handleSearchInputChange}
+        onSearchSubmit={handleSearchSubmit}
         selectedCategoryType={selectedCategoryType}
         onCategoryTypeSelect={setSelectedCategoryType}
-        liveSearchResults={filteredCourses.slice(0, 5)}
+        liveSearchResults={liveSearchResults.slice(0, 5)}
+        onSelectSuggestedCourse={handleSelectSuggestedCourse}
       />
 
       {/* Filter, Products & Pagination Content Section */}

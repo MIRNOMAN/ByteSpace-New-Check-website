@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Star, BarChart2 } from "lucide-react";
 
 export interface CourseCardData {
@@ -21,7 +22,10 @@ export interface CourseCardData {
 
 export function CourseCard({ course }: { course: CourseCardData }) {
   return (
-    <div className="bg-white rounded-[24px] p-4.5 sm:p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow group flex flex-col justify-between">
+    <Link
+      href={`/courses/${course.id}`}
+      className="bg-white rounded-[24px] p-4.5 sm:p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition-all duration-300 group flex flex-col justify-between cursor-pointer block h-full"
+    >
       <div>
         {/* Course Thumbnail Image */}
         <div className="relative w-full h-[160px] sm:h-[185px] rounded-[18px] overflow-hidden mb-4 bg-slate-100">
@@ -49,7 +53,7 @@ export function CourseCard({ course }: { course: CourseCardData }) {
 
         {/* Title & Star Rating */}
         <div className="flex items-center justify-between gap-2 mb-1">
-          <h3 className="font-extrabold text-base sm:text-lg text-[#0F172A] truncate">
+          <h3 className="font-extrabold text-base sm:text-lg text-[#0F172A] group-hover:text-[#0047FF] transition-colors truncate">
             {course.title}
           </h3>
           <div className="flex items-center gap-1 text-slate-600 text-xs font-semibold shrink-0">
@@ -64,7 +68,7 @@ export function CourseCard({ course }: { course: CourseCardData }) {
         </p>
 
         {/* Level Pill & Avatars */}
-        <div className="flex items-center  pt-1 mb-3">
+        <div className="flex items-center pt-1 mb-3">
           <span className="bg-[#F1F5F9] px-3 py-1 rounded-full text-[11px] font-medium text-slate-700 flex items-center gap-1.5">
             <BarChart2 className="w-3.5 h-3.5 text-slate-500" />
             {course.level}
@@ -99,6 +103,6 @@ export function CourseCard({ course }: { course: CourseCardData }) {
         {course.price}
         <span className="text-xs font-normal text-slate-400">{course.period}</span>
       </div>
-    </div>
+    </Link>
   );
 }
