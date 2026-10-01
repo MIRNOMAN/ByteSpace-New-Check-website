@@ -10,32 +10,37 @@ interface PaginationProps {
 }
 
 export function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
-  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+  // Always render at least 5 page numbers (1 2 3 4 5) to match Figma design
+  const maxDisplayPages = Math.max(5, Math.min(5, totalPages));
+  const pages = Array.from({ length: maxDisplayPages }, (_, i) => i + 1);
+
+  const hasPrev = currentPage > 1;
+  const hasNext = currentPage < totalPages;
 
   return (
-    <div className="flex items-center justify-center gap-3 py-8 select-none">
-      {/* Previous Button */}
+    <div className="flex items-center justify-center gap-4 sm:gap-6 py-8 select-none">
+      {/* Previous Button - Always visible */}
       <button
-        onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
+        onClick={() => hasPrev && onPageChange(currentPage - 1)}
+        disabled={!hasPrev}
         aria-label="Previous Page"
-        className="w-10 h-10 rounded-full border border-slate-200/90 bg-white flex items-center justify-center text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs cursor-pointer"
+        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-slate-200/90 bg-white flex items-center justify-center text-[#0F172A] hover:border-slate-400 hover:bg-slate-50 transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs cursor-pointer"
       >
-        <ChevronLeft className="w-4 h-4" />
+        <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
       </button>
 
-      {/* Page Numbers */}
-      <div className="flex items-center gap-2 px-2 text-sm">
+      {/* Page Numbers (1 2 3 4 5) */}
+      <div className="flex items-center gap-3 sm:gap-4 px-2">
         {pages.map((page) => {
           const isActive = page === currentPage;
           return (
             <button
               key={page}
               onClick={() => onPageChange(page)}
-              className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors cursor-pointer ${
+              className={`w-8 h-8 rounded-full flex items-center justify-center text-base sm:text-lg transition-colors cursor-pointer ${
                 isActive
-                  ? "font-extrabold text-[#0F172A] text-base"
-                  : "text-slate-400 font-medium hover:text-slate-700"
+                  ? "text-slate-300 font-bold cursor-default"
+                  : "text-[#0F172A] font-extrabold hover:text-[#0047FF]"
               }`}
             >
               {page}
@@ -44,14 +49,14 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         })}
       </div>
 
-      {/* Next Button */}
+      {/* Next Button - Always visible */}
       <button
-        onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
+        onClick={() => hasNext && onPageChange(currentPage + 1)}
+        disabled={!hasNext}
         aria-label="Next Page"
-        className="w-10 h-10 rounded-full border border-slate-200/90 bg-white flex items-center justify-center text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs cursor-pointer"
+        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-slate-200/90 bg-white flex items-center justify-center text-[#0F172A] hover:border-slate-400 hover:bg-slate-50 transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs cursor-pointer"
       >
-        <ChevronRight className="w-4 h-4" />
+        <ChevronRight className="w-5 h-5 stroke-[2.5]" />
       </button>
     </div>
   );
